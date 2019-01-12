@@ -27,11 +27,6 @@ int		ft_loop(t_fill_gen *g)
 	return (0);
 }
 
-void	ft_victory(t_fill_gen)
-{
-	
-}
-
 void	quit(char *s, t_fill_gen *g)
 {
 	if (g->piece.size)
@@ -68,12 +63,12 @@ int		main(void)
 	free(line);
 	get_next_line(0, &line);
 	get_piece_data(line, &g);
+	free(line);
 	fill_piece(&g);
 	mlx_do_sync(g.mlx.mlx_ptr);
 	mlx_hook(g.mlx.win_ptr, 2, 2, finish, &g);
 	mlx_loop_hook(g.mlx.mlx_ptr, ft_loop, &g);
 	mlx_loop(g.mlx.mlx_ptr);
-	free(line);
-	ft_victory(g);
 	quit(NULL, &g);
 	return (0);
+}

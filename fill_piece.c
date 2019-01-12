@@ -44,11 +44,11 @@ void	print_left(t_fill_gen *g)
 	int x;
 	int y;
 
-	x = 0;
-	while (x <= g->map.x)
+	x = -1;
+	while (++x < g->map.x)
 	{
-		y = 0;
-		while (y <= g->map.y)
+		y = -1;
+		while (++y < g->map.y)
 		{
 			if (is_safe(x, y, g))
 			{
@@ -56,9 +56,7 @@ void	print_left(t_fill_gen *g)
 				g->fill.y = y;
 				return ;
 			}
-			y++;
 		}
-		x++;
 	}
 }
 
@@ -68,10 +66,10 @@ void	print_right(t_fill_gen *g)
 	int y;
 
 	x = g->map.x;
-	while (x > 0)
+	while (--x >= 0)
 	{
 		y = g->map.y;
-		while (y > 0)
+		while (--y >= 0)
 		{
 			if (is_safe(x, y, g))
 			{
@@ -79,9 +77,7 @@ void	print_right(t_fill_gen *g)
 				g->fill.y = y;
 				return ;
 			}
-			y--;
 		}
-		x--;
 	}
 }
 

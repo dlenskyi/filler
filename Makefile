@@ -6,7 +6,7 @@
 #    By: dlenskyi <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/04 16:22:11 by dlenskyi          #+#    #+#              #
-#    Updated: 2019/01/11 21:16:37 by dlenskyi         ###   ########.fr        #
+#    Updated: 2019/01/12 16:25:30 by dlenskyi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,8 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJ)
 	@$(CC) $(FLAGS) $(LIBX_KEY) $(INCLUDES) $(LIBFT) $(OBJ) -o $(NAME)
-	@echo "$(GREEN)filler completed!$(OFF)"
-	@echo "$(GREEN)usage example: ./filler_vm -f resources/maps/map01 -p1 ./dlenskyi.filler -p2 resources/players/superjeannot.filler$(OFF)"
+	@echo "$(GREEN)filler completed!\n$(OFF)"
+	@echo "$(GREEN)usage example: ./filler_vm -f resources/maps/map01 -p1 ./dlenskyi.filler -p2 resources/players/grati.filler$(OFF)"
 
 %.o: %.c $(FILLER_HEAD)
 	@$(CC) $(FLAGS) -c $(INCLUDES) $< -o $@
@@ -55,6 +55,7 @@ $(LIBFT):
 clean:
 	@$(MAKE) -sC $(LIBFT_DIR) clean
 	@rm -f $(OBJ)
+	@rm -f filler.trace
 	@echo "$(RED)libft.a was removed$(OFF)"
 
 fclean: clean

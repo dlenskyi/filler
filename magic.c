@@ -24,7 +24,7 @@ void	magic_border(t_fill_gen *g, int color, int x, int y)
 		while (j < 9)
 		{
 			mlx_pixel_put(g->mlx.mlx_ptr, g->mlx.win_ptr,
-			25 + (x * 12) + j, 25 + (y * 12) + i, color);
+			25 + (x * 11) + j, 25 + (y * 11) + i, color);
 			j++;
 		}
 		i++;
@@ -44,9 +44,9 @@ void	magic_start_pos(t_fill_gen *g)
 		{
 			if (g->map.size[y][x] == g->player.robot ||
 				g->map.size[y][x] == g->player.robot + 32)
-				magic_border(g, 0xff0000, x, y);
+				magic_border(g, 0xeeff00, x, y);
 			else if (g->map.size[y][x] == g->player.human)
-				magic_border(g, 0x33cc33, x, y);
+				magic_border(g, 0xd500ff, x, y);
 			x++;
 		}
 		y++;
@@ -66,9 +66,9 @@ void	magic_piece(t_fill_gen *g)
 		{
 			if (g->map.size[y][x] == g->player.robot ||
 				g->map.size[y][x] == g->player.robot + 32)
-				magic_border(g, 0xff0000, x, y);
+				magic_border(g, 0xeeff00, x, y);
 			else if (g->map.size[y][x] == g->player.human)
-				magic_border(g, 0x33cc33, x, y);
+				magic_border(g, 0xd500ff, x, y);
 			x++;
 		}
 		y++;

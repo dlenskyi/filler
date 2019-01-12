@@ -55,9 +55,9 @@ int		get_init_pos(t_fill_gen *g)
 
 void	get_map_data(t_fill_gen *g, char *data)
 {
-	char	**str;
-	char	*line;
 	int		i;
+	char	*line;
+	char	**str;
 
 	i = -1;
 	if (!(str = ft_strsplit(data, ' ')))
@@ -106,6 +106,6 @@ void	get_mlx_data(t_fill_gen *g)
 	g->mlx.height = g->map.y * 11 + 50;
 	g->mlx.mlx_ptr = mlx_init();
 	g->mlx.win_ptr = mlx_new_window(g->mlx.mlx_ptr, g->mlx.width,
-					g->mlx.height, "Filler");
+					g->mlx.height, "Filler by dlenskyi");
 	magic_start_pos(g);
 }
